@@ -1,6 +1,7 @@
 ## Set up
 
 *Open powershell with administrative privileges*
+
 Type:
 
 ```powershell
@@ -10,6 +11,7 @@ Type:
 ## Running the script
 
 *Open powershell with administrative privileges*
+
 Type:
 
 ```powershell
