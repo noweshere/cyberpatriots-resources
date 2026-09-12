@@ -90,9 +90,7 @@ You can automate this entire process with a couple commands
 - Run this command to install *winget*:
 
 ```powershell
-    Invoke-WebRequest
-    \https://raw.githubusercontent.com/asheroto/winget-installer/master/winget-install.ps1
-    \-UseBasicParsing | iex
+    Invoke-WebRequest https://raw.githubusercontent.com/asheroto/winget-installer/master/winget-install.ps1 -UseBasicParsing | iex
 ```
 
 > Note that it cannot be the usual install command for *winget* because CyberPatriot Windows 11 images just removed PowerShell script execution to prevent automation. This command is just a way to get around this, so you can do this with other `.ps1` scripts without triggering the error.
