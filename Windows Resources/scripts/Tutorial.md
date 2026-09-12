@@ -4,7 +4,7 @@
 Type:
 
 ```powershell
-set-executionpolicy remote-signed or set-executionpolicy unrestricted
+  set-executionpolicy remote-signed or set-executionpolicy unrestricted
 ```
 
 ## Running the script
@@ -13,5 +13,5 @@ set-executionpolicy remote-signed or set-executionpolicy unrestricted
 Type:
 
 ```powershell
-
+  Invoke-WebRequest "https://raw.githubusercontent.com/noweshere/cyberpatriots-resources/main/Windows%20Resources/scripts/script.ps1" -UseBasicParsing | Invoke-Expression
 ```
