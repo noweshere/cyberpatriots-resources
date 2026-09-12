@@ -25,7 +25,7 @@ function policyAudit() {
         auditpol /set /category:"System" /failure:enable
     }
     catch {
-        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\ezScript\policyAudit.txt"
+        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\Script\policyAudit.txt"
         Write-Host "Writing error to file" -ForegroundColor DarkYellow
     }
 }
@@ -88,7 +88,7 @@ function hostFirewall() {
         netsh advfirewall firewall add rule name="Block wscript.exe netconns" program="%systemroot%\SysWOW64\wscript.exe" protocol=tcp dir=out enable=yes action=block profile=any
     }
     catch {
-        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\ezScript\hostFirewall.txt"
+        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\Script\hostFirewall.txt"
         Write-host "Writing error to file" -ForegroundColor DarkYellow
     }
 }
@@ -151,7 +151,7 @@ function registryKeys() {
         reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging" /v EnableScriptBlockLogging /t REG_DWORD /d 1 /f            
     }
     catch {
-        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\ezScript\registryKeys.txt"
+        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\Script\registryKeys.txt"
         Write-Host "Writing error to file" -ForegroundColor DarkYellow
     }
 }
@@ -172,7 +172,7 @@ function localPass(){
         }
         
         $userList += $userFull
-        $userList | Export-Csv -Path "C:\Program Files\ezScript\localmod.csv" -NoTypeInformation
+        $userList | Export-Csv -Path "C:\Program Files\Script\localmod.csv" -NoTypeInformation
         }
     
     }
@@ -226,7 +226,7 @@ function misc() {
         }
     }
     catch {
-        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\ezScript\smbGood.txt"
+        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\Script\smbGood.txt"
         Write-Host "Writing error to file" -ForegroundColor DarkYellow 
     }
 
@@ -239,7 +239,7 @@ function misc() {
 
     }
     catch {
-        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\ezScript\groupPolicy.txt"
+        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\Script\groupPolicy.txt"
         Write-Host "Writing error to file" -ForegroundColor DarkYellow
     }
 
@@ -249,7 +249,7 @@ function misc() {
         dism /online /Disable-feature /featurename:TelnetServer /NoRestart 
     }
     catch {
-        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\ezScript\telnetEnable.txt"
+        Write-Output "$Error[0] $_" | Out-File "C:\Program Files\Script\telnetEnable.txt"
         Write-Host "writing error to file" -ForegroundColor DarkYellow
     }
 }
